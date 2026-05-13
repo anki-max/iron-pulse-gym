@@ -1,0 +1,116 @@
+/* Reset & Basics */
+* 
+{ margin: 0; padding: 0; box-sizing: border-box; 
+  font-family: sans-serif; }
+
+html 
+{ scroll-behavior: smooth; }
+
+/* Sticky Navbar */
+.navbar {
+    position: fixed;
+    top: 0; width: 100%; height: 80px;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 5%; background: rgba(0,0,0,0.8); z-index: 1000;
+}
+
+/* Logo Fix */
+.logo img {
+    height: 60px; 
+    width: auto;
+    object-fit: contain; /* Prevents stretching */
+}
+
+.nav-links { display: flex; list-style: none; gap: 20px; }
+.nav-links a { color: white; text-decoration: none; font-weight: bold; }
+
+/* Active Link Underline */
+.nav-links a.active {
+    border-bottom: 2px solid #ff3e3e;
+}
+
+/* Dropdown Logic */
+.dropdown { position: relative; }
+.dropdown-content { 
+    display: none; position: absolute; background: #222; 
+    padding: 10px; min-width: 150px; 
+}
+.dropdown:hover .dropdown-content { display: block; }
+
+/* Hero Section */
+.hero {
+    position: relative; height: 100vh; width: 100%;
+    display: flex; align-items: center; overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 90% pushes the focus toward the right, but leaves a 10% gap */
+    /* 50% keeps the vertical alignment perfectly centered */
+    object-position: 80% 50%; 
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 550px; 
+    margin-left: 5%; /* Gives a professional gap from the left edge */
+    color: white;
+    text-align: left; /* Ensures text doesn't float toward the center */
+    z-index: 1; /* Ensures it sits above the video */
+}
+
+/* Fix Spacing Issues */
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;      /* Space between lines of the heading */
+    margin-bottom: 20px;   /* Space between heading and subheading */
+}
+
+.hero-content p {
+    margin-bottom: 40px;   /* Space between subheading and buttons */
+}
+
+.highlight { color: #ff3e3e; } /* Gym accent color */
+
+.btn { 
+    display: inline-block; padding: 12px 25px; 
+    text-decoration: none; border-radius: 5px; margin-right: 10px;
+    transition: transform 0.3s, filter 0.3s, border 0.3s;
+    border: 2px solid transparent;
+}
+
+.btn:hover {
+    filter: brightness(1.2); /* Makes them pop */
+    transform: translateY(-3px);
+    border-color: rgba(255,255,255,0.5);
+}
+
+.whatsapp { background: #25D366; color: white; }
+.plans { background: white; color: black; }   
+
+/* Mobile Responsive Logic (Under 768px) */
+@media (max-width: 768px) {
+    .mobile-toggle { 
+        display: block; 
+        background: none; 
+        border: none; 
+        color: white; 
+        font-size: 2rem; 
+    }
+    
+    .nav-links {
+        display: none; /* Hidden by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 80px; left: 0; width: 100%;
+        background: rgba(0,0,0,0.9);
+        padding: 20px;
+    }
+
+    .nav-links.active { display: flex; } /* Toggled by JS */
+}
