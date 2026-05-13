@@ -1,46 +1,90 @@
-/* Reset & Basics */
-* 
-{ margin: 0; padding: 0; box-sizing: border-box; 
-  font-family: sans-serif; }
-
-html 
-{ scroll-behavior: smooth; }
-
-/* Sticky Navbar */
-.navbar {
-    position: fixed;
-    top: 0; width: 100%; height: 80px;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 0 5%; background: rgba(0,0,0,0.8); z-index: 1000;
+/* --- 1. Reset & Global Styles --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 }
 
-/* Logo Fix */
+html { 
+    scroll-behavior: smooth; 
+}
+
+/* --- 2. Navigation Bar --- */
+.navbar {
+    position: fixed;
+    top: 0; 
+    width: 100%; 
+    height: 80px;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 5%; 
+    background: rgba(0,0,0,0.9); 
+    z-index: 1000;
+}
+
 .logo img {
     height: 60px; 
     width: auto;
-    object-fit: contain; /* Prevents stretching */
+    object-fit: contain;
 }
 
-.nav-links { display: flex; list-style: none; gap: 20px; }
-.nav-links a { color: white; text-decoration: none; font-weight: bold; }
+/* Desktop Links */
+.nav-links {
+    display: flex;
+    gap: 45px; /* Increased space for a cleaner desktop look */
+    list-style: none;
+    align-items: center;
+}
 
-/* Active Link Underline */
+.nav-links a { 
+    color: white; 
+    text-decoration: none; 
+    font-weight: 600; 
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff3e3e;
+}
+
 .nav-links a.active {
     border-bottom: 2px solid #ff3e3e;
+    padding-bottom: 5px;
 }
 
-/* Dropdown Logic */
-.dropdown { position: relative; }
+/* --- 3. Dropdown Logic --- */
+.dropdown { 
+    position: relative; 
+}
+
 .dropdown-content { 
-    display: none; position: absolute; background: #222; 
-    padding: 10px; min-width: 150px; 
+    display: none; 
+    position: absolute; 
+    background: #1a1a1a; 
+    padding: 15px; 
+    min-width: 160px; 
+    border-radius: 4px;
+    top: 100%;
+    /* Use flexbox here to create space between Gallery and Review */
+    flex-direction: column;
+    gap: 15px; 
 }
-.dropdown:hover .dropdown-content { display: block; }
 
-/* Hero Section */
+/* Show dropdown as flex on hover to apply the gap */
+.dropdown:hover .dropdown-content { 
+    display: flex; 
+}
+
+/* --- 4. Hero Section & Background Video --- */
 .hero {
-    position: relative; height: 100vh; width: 100%;
-    display: flex; align-items: center; overflow: hidden;
+    position: relative; 
+    height: 100vh; 
+    width: 100%;
+    display: flex; 
+    align-items: center; 
+    overflow: hidden;
 }
 
 .hero-video {
@@ -50,67 +94,107 @@ html
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* 90% pushes the focus toward the right, but leaves a 10% gap */
-    /* 50% keeps the vertical alignment perfectly centered */
+    /* Focuses on the right-side action with a 20% crop buffer */
     object-position: 80% 50%; 
     z-index: -1;
 }
 
 .hero-content {
-    max-width: 550px; 
-    margin-left: 5%; /* Gives a professional gap from the left edge */
+    max-width: 600px; 
+    margin-left: 5%; 
     color: white;
-    text-align: left; /* Ensures text doesn't float toward the center */
-    z-index: 1; /* Ensures it sits above the video */
+    text-align: left;
+    z-index: 1;
 }
 
-/* Fix Spacing Issues */
 .hero-content h1 {
     font-size: 3.5rem;
-    line-height: 1.2;      /* Space between lines of the heading */
-    margin-bottom: 20px;   /* Space between heading and subheading */
+    line-height: 1.1;
+    margin-bottom: 25px;
 }
 
+.highlight { 
+    color: #ff3e3e; 
+}
+
+/* Modernized Subheading */
 .hero-content p {
-    margin-bottom: 40px;   /* Space between subheading and buttons */
+    font-size: 1.15rem;
+    line-height: 1.7; /* Breathing room between lines */
+    letter-spacing: 0.3px;
+    color: rgba(255, 255, 255, 0.85); 
+    margin-bottom: 45px; /* Pushes buttons down further */
+    font-weight: 300;
 }
 
-.highlight { color: #ff3e3e; } /* Gym accent color */
+/* --- 5. Buttons & CTAs --- */
+.hero-btns {
+    display: flex;
+    gap: 20px;
+}
 
-.btn { 
-    display: inline-block; padding: 12px 25px; 
-    text-decoration: none; border-radius: 5px; margin-right: 10px;
-    transition: transform 0.3s, filter 0.3s, border 0.3s;
-    border: 2px solid transparent;
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 .btn:hover {
-    filter: brightness(1.2); /* Makes them pop */
-    transform: translateY(-3px);
-    border-color: rgba(255,255,255,0.5);
+    filter: brightness(1.2);
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-.whatsapp { background: #25D366; color: white; }
-.plans { background: white; color: black; }   
+.whatsapp {
+    background: #25D366;
+    color: white;
+}
 
-/* Mobile Responsive Logic (Under 768px) */
+.plans {
+    background: white;
+    color: black;
+    border: 2px solid white;
+}
+
+/* --- 6. Mobile Responsiveness --- */
+
+/* Hamburger starts HIDDEN on desktop */
+.mobile-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
-    .mobile-toggle { 
-        display: block; 
-        background: none; 
-        border: none; 
-        color: white; 
-        font-size: 2rem; 
+    .mobile-toggle {
+        display: block; /* ONLY shows on mobile */
     }
-    
+
     .nav-links {
-        display: none; /* Hidden by default on mobile */
+        display: none; /* Hidden until toggled */
         flex-direction: column;
         position: absolute;
-        top: 80px; left: 0; width: 100%;
-        background: rgba(0,0,0,0.9);
-        padding: 20px;
+        top: 80px; 
+        left: 0; 
+        width: 100%;
+        background: rgba(0,0,0,0.95);
+        padding: 30px;
+        gap: 25px;
     }
 
-    .nav-links.active { display: flex; } /* Toggled by JS */
+    .nav-links.active { 
+        display: flex; 
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
 }
