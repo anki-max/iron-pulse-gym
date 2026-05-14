@@ -3,6 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Iron Pulse Fitness - Pune's premier gym on FC Road. Specialized strength training, HIIT, yoga, and personal coaching to transform your body. Join today!">
+<link rel="canonical" href="https://yourdomain.com/">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<!-- <meta property="og:url" content="https://yourdomain.com/"> -->
+<meta property="og:title" content="Iron Pulse Fitness | Best Gym in Pune & FC Road">
+<meta property="og:description" content="Transform your body at Iron Pulse Fitness. Expert trainers, premium equipment, and functional fitness in the heart of Pune.">
+<meta property="og:image" content="https://yourdomain.com/assets/images/gym-hero-video-poster.webp">
+<meta property="og:image:alt" content="Iron Pulse Fitness training floor and strength workout preview">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Iron Pulse Fitness | Strength & Transformation">
+<meta name="twitter:description" content="Join Iron Pulse Fitness Pune. Strength training, Fat loss, and Yoga. View our membership plans.">
+<meta name="twitter:image" content="https://yourdomain.com/assets/images/gym-hero-video-poster.webp">
+
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="preload" as="image" href="assets/images/logo/iron-pulse-fitness-logo.png" fetchpriority="high">
+<link rel="preload" as="image" href="assets/images/gym-hero-video-poster.webp" fetchpriority="high">
+<link rel="icon" type="image/png" href="assets/images/logo/iron-pulse-fitness-logo.png">
     <title>Iron Pulse Fitness</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -10,10 +31,10 @@
 <body>
 
     <nav class="navbar">
-    <div class="logo">
+    <a href="#home" class="logo" aria-label="Iron Pulse Fitness home">
         <!-- logo path -->
-        <img src="assets/images/logo/iron-pulse-fitness-logo.png" alt="Iron Pulse Logo">
-    </div>
+        <img src="assets/images/logo/iron-pulse-fitness-logo.png" alt="Iron Pulse Logo" width="180" height="62" loading="eager" decoding="async" fetchpriority="high">
+    </a>
     
     <!-- Mobile menu button: shown only on small screens through CSS. -->
     <button class="mobile-toggle" aria-label="Open Menu">&#9776;</button>
@@ -36,8 +57,9 @@
 
     <header class="hero" id="home">
         <!-- Video Layer -->
-        <video autoplay muted loop playsinline class="hero-video" poster="assets/images/gym-hero-video-poster.webp">
-            <source src="assets/videos/hero-video-gym-desktop.mp4" type="video/mp4">
+        <video autoplay muted loop playsinline preload="metadata" class="hero-video" poster="assets/images/gym-hero-video-poster.webp" aria-label="Iron Pulse Fitness training video">
+            <source data-src="assets/videos/hero-video-gym-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+            <source data-src="assets/videos/hero-video-gym-desktop.mp4" type="video/mp4">
         </video>
 
         <!-- Content Layer -->
@@ -70,7 +92,7 @@
         <!-- Card 1: Strength -->
         <div class="service-card">
             <div class="card-img">
-                <img src="assets/images/services/weighting-service.webp" alt="Strength Training">
+                <img src="assets/images/services/weighting-service.webp" alt="Strength Training" width="800" height="1000" loading="lazy" decoding="async">
             </div>
             <div class="card-content">
                 <h3>Strength Training</h3>
@@ -81,7 +103,7 @@
         <!-- Card 2: Yoga -->
         <div class="service-card">
             <div class="card-img">
-                <img src="assets/images/services/yoga-service.webp" alt="Yoga & Mobility">
+                <img src="assets/images/services/yoga-service.webp" alt="Yoga & Mobility" width="800" height="1000" loading="lazy" decoding="async">
             </div>
             <div class="card-content">
                 <h3>Yoga & Mobility</h3>
@@ -92,7 +114,7 @@
         <!-- Card 3: Cardio -->
         <div class="service-card">
             <div class="card-img">
-                <img src="assets/images/services/cardio-service.webp" alt="Fat Loss">
+                <img src="assets/images/services/cardio-service.webp" alt="Fat Loss" width="800" height="1000" loading="lazy" decoding="async">
             </div>
             <div class="card-content">
                 <h3>Fat Loss Program</h3>
@@ -103,7 +125,7 @@
         <!-- Card 4: Functional -->
         <div class="service-card">
             <div class="card-img">
-                <img src="assets/images/services/functional-training-service.webp" alt="Functional">
+                <img src="assets/images/services/functional-training-service.webp" alt="Functional Training" width="800" height="1000" loading="lazy" decoding="async">
             </div>
             <div class="card-content">
                 <h3>Functional Training</h3>
@@ -114,7 +136,7 @@
         <!-- Card 5: HIIT -->
         <div class="service-card">
             <div class="card-img">
-                <img src="assets/images/services/hiit-service.webp" alt="HIIT">
+                <img src="assets/images/services/hiit-service.webp" alt="HIIT Sessions" width="800" height="1000" loading="lazy" decoding="async">
             </div>
             <div class="card-content">
                 <h3>HIIT Sessions</h3>
@@ -125,7 +147,7 @@
         <!-- Card 6: Personal Training -->
         <div class="service-card">
             <div class="card-img">
-                <img src="assets/images/services/training-service.webp" alt="Personal Training">
+                <img src="assets/images/services/training-service.webp" alt="Personal Training" width="800" height="1000" loading="lazy" decoding="async">
             </div>
             <div class="card-content">
                 <h3>Personal Training</h3>
@@ -258,9 +280,6 @@
     </div>
 </section>
 
-<!-- FONT AWESOME (Add this to your <head> if not already there) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
 <!-- =============================================
      TRAINERS SECTION
      ============================================= -->
@@ -274,7 +293,7 @@
         <!-- Trainer 1 -->
         <div class="trainer-card">
             <div class="trainer-img">
-                <img src="assets/images/trainers/male-trainer-1.webp" alt="Fitness Trainer">
+                <img src="assets/images/trainers/male-trainer-1.webp" alt="Fitness Trainer Vikram Singh" width="1000" height="1100" loading="lazy" decoding="async">
             </div>
             <div class="trainer-info">
                 <h3>Vikram Singh</h3>
@@ -289,7 +308,7 @@
   <!-- Trainer 2 -->
         <div class="trainer-card">
             <div class="trainer-img">
-                <img src="assets/images/trainers/female-trainer.webp" alt="Fitness Trainer">
+                <img src="assets/images/trainers/female-trainer.webp" alt="Fitness Trainer Anjali Sharma" width="1000" height="1100" loading="lazy" decoding="async">
             </div>
             <div class="trainer-info">
                 <h3>Anjali Sharma</h3>
@@ -304,7 +323,7 @@
         <!-- Trainer 3 -->
         <div class="trainer-card">
             <div class="trainer-img">
-                <img src="assets/images/trainers/male-trainer-2.webp" alt="Fitness Trainer">
+                <img src="assets/images/trainers/male-trainer-2.webp" alt="Fitness Trainer Karan Verma" width="1000" height="1100" loading="lazy" decoding="async">
             </div>
             <div class="trainer-info">
                 <h3>Karan Verma</h3>
@@ -337,19 +356,19 @@
         <div class="slider-container">
             <!-- Image 1 -->
             <div class="slide fade">
-                <img src="assets/images/gallary/gym-gallary-1.webp" alt="Gym Interior" loading="lazy">
+                <img src="assets/images/gallary/gym-gallary-1.webp" alt="Gym Interior" width="1000" height="500" loading="lazy" decoding="async">
             </div>
             <!-- Image 2 -->
             <div class="slide fade">
-                <img src="assets/images/gallary/gym-gallary-2.webp" alt="Weights Area" loading="lazy">
+                <img src="assets/images/gallary/gym-gallary-2.webp" alt="Weights Area" width="1000" height="500" loading="lazy" decoding="async">
             </div>
             <!-- Image 3 -->
             <div class="slide fade">
-                <img src="assets/images/gallary/gym-gallary-3.webp" alt="Cardio Zone" loading="lazy">
+                <img src="assets/images/gallary/gym-gallary-3.webp" alt="Cardio Zone" width="1000" height="500" loading="lazy" decoding="async">
             </div>
             <!-- Image 4 -->
             <div class="slide fade">
-                <img src="assets/images/gallary/gym-gallary-4.webp" alt="Training Session" loading="lazy">
+                <img src="assets/images/gallary/gym-gallary-4.webp" alt="Training Session" width="1000" height="500" loading="lazy" decoding="async">
             </div>
         </div>
     </div>
@@ -480,6 +499,69 @@
         </div>
     </div>
 </section>
+
+<!-- =============================================
+     FOOTER SECTION
+     ============================================= -->
+<footer class="main-footer">
+    <div class="footer-container">
+        <!-- Column 1: Brand & Contact -->
+        <div class="footer-col">
+            <a href="#home" class="footer-logo-link" aria-label="Iron Pulse Fitness home">
+                <img src="assets/images/logo/iron-pulse-fitness-logo.png" alt="Iron Pulse Fitness Logo" class="footer-logo-img" width="180" height="62" loading="lazy" decoding="async">
+            </a>
+            <p class="footer-tagline">Build Strength. Build Discipline.</p>
+            <div class="footer-contact-info">
+                <p><i class="fa-solid fa-location-dot"></i> FC Road, Pune, MH</p>
+                <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+            </div>
+        </div>
+
+        <!-- Column 2: Main Navigation -->
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#membership">Membership</a></li>
+                <li><a href="#trainers">Trainers</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Legal -->
+        <div class="footer-col">
+            <h3>Legal</h3>
+            <ul>
+                <li><a href="legal.html#privacy">Privacy Policy</a></li>
+                <li><a href="legal.html#terms">Terms of Service</a></li>
+                <li><a href="legal.html#cookies">Cookie Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 4: Socials & Back to Top -->
+        <div class="footer-col">
+            <h3>Follow Us</h3>
+            <div class="footer-socials">
+                <a href="https://instagram.com/ironpulsefitness" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+            <a href="#home" class="back-to-top">
+                <i class="fa-solid fa-arrow-up"></i> Top
+            </a>
+        </div>
+    </div>
+
+    <!-- Bottom Copyright Bar -->
+    <div class="footer-bottom">
+        <p>&copy; 2026 Iron Pulse Fitness. All Rights Reserved.</p>
+        <p>Made by <a href="https://freelance.crexa" target="_blank">freelance.crexa</a></p>
+    </div>
+</footer>
 
     <script src="assets/js/script.js"></script>
 </body>

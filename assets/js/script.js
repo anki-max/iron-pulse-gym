@@ -1,6 +1,8 @@
 // Change navbar background when scrolling
 window.addEventListener('scroll', () => {
     const nav = document.querySelector('.navbar');
+    if (!nav) return;
+
     if (window.scrollY > 50) {
         nav.style.background = '#000'; // Solid black on scroll
     } else {
@@ -10,8 +12,53 @@ window.addEventListener('scroll', () => {
 const mobileToggle = document.querySelector('.mobile-toggle');
 const navLinks = document.querySelector('.nav-links');
 
-mobileToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+if (mobileToggle && navLinks) {
+    mobileToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    navLinks.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    const heroVideo = document.querySelector('.hero-video');
+    if (!heroVideo) return;
+
+    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    const reducedData = window.matchMedia('(prefers-reduced-data: reduce)').matches;
+    const saveData = (connection && connection.saveData) || reducedData;
+
+    if (saveData) {
+        heroVideo.removeAttribute('autoplay');
+        heroVideo.pause();
+        return;
+    }
+
+    heroVideo.querySelectorAll('source[data-src]').forEach((source) => {
+        source.src = source.dataset.src;
+    });
+
+    heroVideo.load();
+    heroVideo.play().catch(() => {
+        heroVideo.pause();
+    });
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    const flowItems = document.querySelectorAll('h1, h2, h3, h4, p, li, .btn, .join-btn, .back-to-top');
+
+    flowItems.forEach((item, index) => {
+        item.classList.add('text-flow');
+        item.style.setProperty('--flow-delay', `${Math.min(index * 55, 1300)}ms`);
+    });
+
+    requestAnimationFrame(() => {
+        flowItems.forEach((item) => item.classList.add('is-visible'));
+    });
 });
 
 
@@ -27,6 +74,7 @@ function moveSlide(n) {
 function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("slide");
+    if (!slides.length) return;
     
     if (n > slides.length) {slideIndex = 1}
     if (n < 1) {slideIndex = slides.length}
