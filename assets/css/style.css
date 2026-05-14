@@ -350,3 +350,292 @@ body {
         font-size: 2.2rem;
     }
 }
+/* =============================================
+   SECTION 4: SCHEDULE SECTION
+   - Features: High-contrast text, specialized highlight, and mobile stack
+   ============================================= */
+
+.schedule {
+    padding: 100px 5%;
+    background-color: #050505; /* Deep black for depth */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.schedule-container {
+    max-width: 1100px;
+    width: 100%;
+}
+
+/* --- MAIN GYM HOURS (Morning/Evening) --- */
+.main-timings {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.timing-box {
+    background: #111;
+    padding: 35px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #222;
+    flex: 1;
+    transition: transform 0.3s ease;
+}
+
+.timing-box h3 {
+    color: #ff3e3e; /* Accent Red */
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    font-weight: 800; /* Maximum visibility */
+    letter-spacing: 1.5px;
+}
+
+.timing-box p {
+    font-size: 2rem; /* Large, clear font for timings */
+    font-weight: 700;
+    color: #ffffff; /* High contrast white */
+}
+
+/* --- BATCH GRID (Men/Women/Personal) --- */
+.batch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.batch-card {
+    background: #111111;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #222;
+    border-left: 4px solid #333; /* Standard border */
+    transition: all 0.3s ease;
+}
+
+.batch-header {
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.batch-card p {
+    color: #cccccc; /* Improved readability for subtext */
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* --- ENHANCED WOMEN'S BATCH HIGHLIGHT --- */
+.highlight-card {
+    border-left: 5px solid #ff3e3e !important;
+    /* Brighter, glowing background specifically for the women's card */
+    background: rgba(255, 62, 62, 0.12) !important;
+    box-shadow: inset 0 0 20px rgba(255, 62, 62, 0.05);
+    border: 1px solid rgba(255, 62, 62, 0.3);
+}
+
+.highlight-card .batch-header {
+    color: #ff3e3e; /* Highlights the text itself */
+}
+
+.highlight-card p {
+    color: #ffffff; /* Ensures the time is perfectly visible */
+    font-weight: 600;
+}
+
+/* --- HOVER INTERACTION --- */
+.batch-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-5px); /* Gentle lift effect */
+    border-color: #444;
+}
+
+.highlight-card:hover {
+    background: rgba(255, 62, 62, 0.18) !important;
+    border-color: #ff3e3e;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 900px) {
+    .batch-grid {
+        grid-template-columns: 1fr; /* Stacks cards for mobile readability */
+        gap: 20px;
+    }
+
+    .main-timings {
+        flex-direction: column; /* Morning/Evening stack on small screens */
+    }
+
+    .timing-box p {
+        font-size: 1.6rem;
+    }
+}
+
+
+
+/* --- MEMBERSHIP SECTION --- */
+.membership {
+    padding: 100px 5%;
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+.membership-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 Columns for Big Screens */
+    gap: 25px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.plan-card {
+    background: var(--color-surface);
+    padding: 40px 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.28);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+}
+
+/* --- Highlight Logic ---
+   Only the annual plan is larger. Other cards stay normal size. */
+.plan-card.best-value {
+    border: 2px solid #ff3e3e;
+    transform: scale(1.04);
+    z-index: 1;
+    box-shadow: 0 16px 32px rgba(255, 62, 62, 0.12);
+}
+
+.plan-card.best-value:hover {
+    transform: scale(1.04) translateY(-4px);
+    border-color: #ff3e3e;
+    box-shadow: 0 18px 34px rgba(255, 62, 62, 0.14);
+}
+
+.badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff3e3e;
+    color: white;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+/* --- TEXT & PRICES --- */
+.plan-header {
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 20px;
+}
+
+.plan-header h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #ff3e3e;
+}
+
+.price span {
+    font-size: 1rem;
+    color: var(--color-muted);
+}
+
+/* Feature list: each item is separated and uses CSS bullets instead of icon fonts. */
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    flex-grow: 1; /* Pushes button to bottom */
+}
+
+.plan-features li {
+    margin-bottom: 12px;
+    padding-left: 26px;
+    font-size: 0.98rem;
+    color: var(--color-muted);
+    display: flex;
+    align-items: center;
+    position: relative;
+    line-height: 1.5;
+}
+
+.plan-features li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #ff3e3e;
+    box-shadow: 0 0 0 3px rgba(255, 62, 62, 0.1);
+}
+
+/* --- JOIN BUTTON --- */
+.join-btn {
+    text-decoration: none;
+    background: transparent;
+    color: var(--color-text);
+    text-align: center;
+    padding: 14px 18px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.35); /* Soft border for a light CTA highlight. */
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.join-btn:hover {
+    background: rgba(255, 62, 62, 0.12);
+    border-color: #ff3e3e;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(255, 62, 62, 0.1);
+}
+
+.highlight-btn {
+    background: rgba(255, 62, 62, 0.12);
+    border-color: #ff3e3e;
+    color: #ffffff;
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 1100px) {
+    .membership-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 for Medium screens */
+    }
+    .plan-card.best-value {
+        transform: scale(1); /* Remove scale on smaller screens to avoid overlap */
+    }
+}
+
+@media (max-width: 600px) {
+    .membership-grid {
+        grid-template-columns: 1fr; /* 1 for Mobile */
+    }
+}
