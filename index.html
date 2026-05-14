@@ -10,7 +10,7 @@
 
     <nav class="navbar">
     <div class="logo">
-        <!-- Ensure your path matches the folder structure in Screenshot 2026-05-11 200656.png -->
+        <!-- logo path -->
         <img src="assets/images/logo/iron-pulse-fitness-logo.png" alt="Iron Pulse Logo">
     </div>
     
@@ -29,13 +29,13 @@
         <li><a href="#schedule">Schedule</a></li>
         <li><a href="#membership">Membership</a></li>
         <li><a href="#trainers">Trainers</a></li>
-        <li><a href="#contact">Contact</a></li> <!-- Added missing link -->
+        <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 
     <header class="hero" id="home">
         <!-- Video Layer -->
-        <video autoplay muted loop playsinline class="hero-video">
+        <video autoplay muted loop playsinline class="hero-video" poster="assets/images/gym-hero-video-poster.webp">
             <source src="assets/videos/hero-video-gym-desktop.mp4" type="video/mp4">
         </video>
 
@@ -46,11 +46,92 @@
               Our mission is to help members achieve real physical and mental transformation with expert guidance and premium equipment.
             </p>
             <div class="hero-btns">
-                <a href="https://wa.me/+91 98765 43210" class="btn whatsapp">Contact</a>
+               <a href="https://wa.me/919876543210" class="btn whatsapp">Contact</a>
                 <a href="#membership" class="btn plans">View Plans</a>
             </div>
         </div>
     </header>
+
+
+    <!-- =============================================
+     SERVICES SECTION
+     - Grid: 3 columns (Desktop), 2 (Tablet), 1 (Mobile)
+     - Hover: Smooth lift and red border accent
+     ============================================= -->
+<section class="services" id="services">
+    <div class="section-title">
+        <h2>Our <span class="highlight">Services</span></h2>
+        <p>Professional fitness programs designed for strength, endurance, and transformation.</p>
+    </div>
+
+    <div class="services-grid">
+        <!-- Card 1: Strength -->
+        <div class="service-card">
+            <div class="card-img">
+                <img src="assets/images/services/weighting-service.webp" alt="Strength Training">
+            </div>
+            <div class="card-content">
+                <h3>Strength Training</h3>
+                <p>Build real strength, improve muscle tone, and boost your confidence with structured weight training sessions designed for every fitness level.</p>
+            </div>
+        </div>
+
+        <!-- Card 2: Yoga -->
+        <div class="service-card">
+            <div class="card-img">
+                <img src="assets/images/services/yoga-service.webp" alt="Yoga & Mobility">
+            </div>
+            <div class="card-content">
+                <h3>Yoga & Mobility</h3>
+                <p>Refresh your mind and strengthen your body with guided yoga sessions focused on flexibility, posture, and inner balance.</p>
+            </div>
+        </div>
+
+        <!-- Card 3: Cardio -->
+        <div class="service-card">
+            <div class="card-img">
+                <img src="assets/images/services/cardio-service.webp" alt="Fat Loss">
+            </div>
+            <div class="card-content">
+                <h3>Fat Loss Program</h3>
+                <p>Increase stamina, burn calories, and improve heart health with high-energy cardio workouts designed to keep you moving.</p>
+            </div>
+        </div>
+
+        <!-- Card 4: Functional -->
+        <div class="service-card">
+            <div class="card-img">
+                <img src="assets/images/services/functional-training-service.webp" alt="Functional">
+            </div>
+            <div class="card-content">
+                <h3>Functional Training</h3>
+                <p>Train your body for real-life movement with functional workouts that improve balance, flexibility, and overall coordination.</p>
+            </div>
+        </div>
+
+        <!-- Card 5: HIIT -->
+        <div class="service-card">
+            <div class="card-img">
+                <img src="assets/images/services/hiit-service.webp" alt="HIIT">
+            </div>
+            <div class="card-content">
+                <h3>HIIT Sessions</h3>
+                <p>Push your limits with fast-paced HIIT workouts that maximize calorie burn and improve endurance in less time.</p>
+            </div>
+        </div>
+
+        <!-- Card 6: Personal Training -->
+        <div class="service-card">
+            <div class="card-img">
+                <img src="assets/images/services/training-service.webp" alt="Personal Training">
+            </div>
+            <div class="card-content">
+                <h3>Personal Training</h3>
+                <p>Get one-on-one coaching tailored to your body, goals, and lifestyle with customized workout plans and expert tracking.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
     <script src="assets/js/script.js"></script>
 </body>
