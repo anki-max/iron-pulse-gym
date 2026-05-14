@@ -834,3 +834,93 @@ body {
         font-size: 16px;
     }
 }
+
+
+
+/* --- TESTIMONIALS SECTION --- */
+.testimonials {
+    padding: 100px 5%;
+    background-color: #0a0a0a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.testimonial-card {
+    background: #111;
+    padding: 40px 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s ease;
+}
+
+.testimonial-card:hover {
+    border-color: rgba(255, 62, 62, 0.3);
+    transform: translateY(-5px);
+}
+
+.stars {
+    color: #ff3e3e;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.review-text {
+    color: #cccccc;
+    font-size: 1rem;
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+/* --- THE INITIALS CIRCLE --- */
+.client-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.initials-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #26278d; /* Theme Red */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    flex-shrink: 0; /* Prevents circle from squeezing */
+    text-transform: uppercase;
+    border:1px solid white;
+}
+
+.client-detail h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 2px;
+}
+
+.client-detail span {
+    color: #777;
+    font-size: 0.85rem;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1000px) {
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+}
