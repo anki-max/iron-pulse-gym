@@ -14,13 +14,13 @@
         <img src="assets/images/logo/iron-pulse-fitness-logo.png" alt="Iron Pulse Logo">
     </div>
     
-    <!-- Mobile Toggle Button -->
-    <button class="mobile-toggle" aria-label="Open Menu">☰</button>
+    <!-- Mobile menu button: shown only on small screens through CSS. -->
+    <button class="mobile-toggle" aria-label="Open Menu">&#9776;</button>
 
     <ul class="nav-links">
         <li><a href="#home" class="active">Home</a></li>
         <li class="dropdown">
-            <a href="#services">Services ▾</a>
+            <a href="#services">Services &#9662;</a>
             <ul class="dropdown-content">
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#reviews">Reviews</a></li>
@@ -55,15 +55,16 @@
 
     <!-- =============================================
      SERVICES SECTION
-     - Grid: 3 columns (Desktop), 2 (Tablet), 1 (Mobile)
-     - Hover: Smooth lift and red border accent
+     Each card includes an image, heading, and short benefit-focused description.
+     The responsive grid behavior is controlled in assets/css/style.css.
      ============================================= -->
 <section class="services" id="services">
     <div class="section-title">
         <h2>Our <span class="highlight">Services</span></h2>
-        <p>Professional fitness programs designed for strength, endurance, and transformation.</p>
+        <p>Focused programs built to help you train harder, move better, and stay consistent.</p>
     </div>
 
+    <!-- Service cards: keep descriptions short so all cards stay visually balanced. -->
     <div class="services-grid">
         <!-- Card 1: Strength -->
         <div class="service-card">
@@ -72,7 +73,7 @@
             </div>
             <div class="card-content">
                 <h3>Strength Training</h3>
-                <p>Build real strength, improve muscle tone, and boost your confidence with structured weight training sessions designed for every fitness level.</p>
+                <p>Progressive weight training that builds strength, lean muscle, and confidence with safe coaching for every fitness level.</p>
             </div>
         </div>
 
@@ -83,7 +84,7 @@
             </div>
             <div class="card-content">
                 <h3>Yoga & Mobility</h3>
-                <p>Refresh your mind and strengthen your body with guided yoga sessions focused on flexibility, posture, and inner balance.</p>
+                <p>Improve flexibility, posture, breathing, and recovery through guided sessions that keep your body balanced and mobile.</p>
             </div>
         </div>
 
@@ -94,7 +95,7 @@
             </div>
             <div class="card-content">
                 <h3>Fat Loss Program</h3>
-                <p>Increase stamina, burn calories, and improve heart health with high-energy cardio workouts designed to keep you moving.</p>
+                <p>High-energy cardio and conditioning plans designed to burn calories, build stamina, and support sustainable fat loss.</p>
             </div>
         </div>
 
@@ -105,7 +106,7 @@
             </div>
             <div class="card-content">
                 <h3>Functional Training</h3>
-                <p>Train your body for real-life movement with functional workouts that improve balance, flexibility, and overall coordination.</p>
+                <p>Practical movement workouts that improve balance, coordination, core strength, and everyday athletic performance.</p>
             </div>
         </div>
 
@@ -116,7 +117,7 @@
             </div>
             <div class="card-content">
                 <h3>HIIT Sessions</h3>
-                <p>Push your limits with fast-paced HIIT workouts that maximize calorie burn and improve endurance in less time.</p>
+                <p>Short, intense workout sessions that challenge your limits, raise endurance, and deliver maximum results in less time.</p>
             </div>
         </div>
 
@@ -127,7 +128,7 @@
             </div>
             <div class="card-content">
                 <h3>Personal Training</h3>
-                <p>Get one-on-one coaching tailored to your body, goals, and lifestyle with customized workout plans and expert tracking.</p>
+                <p>One-on-one coaching with custom workouts, form correction, and progress tracking matched to your goals and lifestyle.</p>
             </div>
         </div>
     </div>

@@ -1,4 +1,15 @@
-/* --- 1. Reset & Global Styles --- */
+/* --- 1. Reset, Theme Colors & Global Styles --- */
+:root {
+    /* Main site palette: edit these values to change the full color mood quickly. */
+    --color-bg: #090909;
+    --color-surface: #151515;
+    --color-surface-light: #1f1f1f;
+    --color-text: #ffffff;
+    --color-muted: #c8c8c8;
+    --color-accent: #ff4d35;
+    --color-accent-soft: rgba(255, 77, 53, 0.18);
+}
+
 * { 
     margin: 0; 
     padding: 0; 
@@ -6,9 +17,13 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 }
 
-
 html { 
     scroll-behavior: smooth; 
+}
+
+body {
+    background: var(--color-bg);
+    color: var(--color-text);
 }
 
 /* --- 2. Navigation Bar --- */
@@ -57,11 +72,11 @@ html {
 }
 
 .nav-links a:hover {
-    color: #ff3e3e;
+    color: var(--color-accent);
 }
 
 .nav-links a.active {
-    border-bottom: 2px solid #ff3e3e;
+    border-bottom: 2px solid var(--color-accent);
     padding-bottom: 5px;
 }
 
@@ -100,7 +115,7 @@ html {
 
 .hero-video {
     position: absolute;
-     inset: 0;
+    inset: 0;
     top: 0;
     left: 0;
     width: 100%;
@@ -126,7 +141,7 @@ html {
 }
 
 .highlight { 
-    color: #ff3e3e; 
+    color: var(--color-accent); 
 }
 
 /* Modernized Subheading */
@@ -215,11 +230,12 @@ html {
         font-size: 2.5rem;
     }
 }
-/* --- SERVICES SECTION WRAPPER --- */
+/* --- 7. Services Section Wrapper --- */
 .services {
     padding: 100px 5%;
-    background-color: #0a0a0a; /* Deep dark theme */
-    color: white;
+    background:
+        linear-gradient(180deg, #0b0b0b 0%, var(--color-bg) 100%);
+    color: var(--color-text);
     display: flex;
     flex-direction: column;
     align-items: center; 
@@ -239,34 +255,37 @@ html {
 }
 
 .section-title p {
-    color: #aaa;
+    color: var(--color-muted);
     font-size: 1.1rem;
+    line-height: 1.7;
 }
 
-/* --- THE GRID SYSTEM --- */
+/* --- Services Grid ---
+   Desktop uses 3 columns. Tablet and mobile column changes are below. */
 .services-grid {
     display: grid;
-    gap: 50px;           /* Large gap for "premium" feel */
-    max-width: 1200px;   /* Prevents cards from getting too wide on Desktop */
+    gap: 40px;
+    max-width: 1200px;   /* Prevents cards from getting too wide on large screens. */
     width: 100%;
-    grid-template-columns: repeat(3, 1fr); /* 3 Columns Desktop */
+    grid-template-columns: repeat(3, 1fr);
 }
 
-/* --- CARD DESIGN --- */
+/* --- Service Card Design --- */
 .service-card {
-    background: #151515; /* Slightly lighter than background */
-    border-radius: 12px;
+    background: var(--color-surface);
+    border-radius: 10px;
     overflow: hidden;
-    border: 1px solid #222;
-    transition: all 0.4s ease; /* Smooth hover transition */
+    border: 1px solid #2a2a2a;
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
     display: flex;
     flex-direction: column;
 }
 
-/* --- IMAGE HANDLING (No Crop/Pretty Fix) --- */
+/* --- Service Image Handling ---
+   aspect-ratio keeps every service image the same shape. */
 .card-img {
     width: 100%;
-    aspect-ratio: 4 / 5; /* Forces the "pretty" portrait shape */
+    aspect-ratio: 4 / 5;
     overflow: hidden;
     background: #000;
     position: relative;
@@ -275,38 +294,41 @@ html {
 .card-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;   /* Fills the 4:5 box perfectly */
+    object-fit: cover;
     transition: transform 0.5s ease;
 }
 
-/* --- HOVER EFFECTS --- */
+/* --- Service Hover Effects --- */
 .service-card:hover {
-    transform: translateY(-12px);     /* Lifts the card */
-    border-color: #ff3e3e;            /* Red accent border */
-    box-shadow: 0 15px 30px rgba(255, 62, 62, 0.15); /* Soft red glow */
+    transform: translateY(-10px);
+    border-color: var(--color-accent);
+    box-shadow: 0 18px 35px var(--color-accent-soft);
 }
 
 .service-card:hover .card-img img {
     transform: scale(1.08);           /* Subtle zoom effect */
 }
 
-/* --- TEXT CONTENT --- */
+/* --- Service Text Content ---
+   Paragraph color and line-height are kept readable on the dark cards. */
 .card-content {
-    padding: 25px;
-    flex-grow: 1;                     /* Ensures cards stay same height */
+    padding: 26px;
+    background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-surface-light) 100%);
+    flex-grow: 1;
 }
 
 .card-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 12px;
-    color: #fff;
+    font-size: 1.35rem;
+    margin-bottom: 14px;
+    color: var(--color-text);
     text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .card-content p {
-    color: #999;
-    font-size: 0.95rem;
-    line-height: 1.6;
+    color: var(--color-muted);
+    font-size: 1rem;
+    line-height: 1.75;
 }
 
 /* --- RESPONSIVE BREAKPOINTS --- */
