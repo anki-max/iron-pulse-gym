@@ -11,6 +11,8 @@ window.addEventListener('scroll', () => {
 });
 const mobileToggle = document.querySelector('.mobile-toggle');
 const navLinks = document.querySelector('.nav-links');
+const dropdown = document.querySelector('.dropdown');
+const dropdownToggle = document.querySelector('.dropdown-toggle');
 
 if (mobileToggle && navLinks) {
     mobileToggle.addEventListener('click', () => {
@@ -19,8 +21,24 @@ if (mobileToggle && navLinks) {
 
     navLinks.querySelectorAll('a').forEach((link) => {
         link.addEventListener('click', () => {
+            if (link.classList.contains('dropdown-toggle') && window.matchMedia('(max-width: 768px)').matches) {
+                return;
+            }
+
             navLinks.classList.remove('active');
+            dropdown?.classList.remove('open');
+            dropdownToggle?.setAttribute('aria-expanded', 'false');
         });
+    });
+}
+
+if (dropdown && dropdownToggle) {
+    dropdownToggle.addEventListener('click', (event) => {
+        if (!window.matchMedia('(max-width: 768px)').matches) return;
+
+        event.preventDefault();
+        const isOpen = dropdown.classList.toggle('open');
+        dropdownToggle.setAttribute('aria-expanded', String(isOpen));
     });
 }
 
@@ -45,6 +63,13 @@ window.addEventListener('DOMContentLoaded', () => {
     heroVideo.load();
     heroVideo.play().catch(() => {
         heroVideo.pause();
+    });
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.gallery img').forEach((image) => {
+        const preload = new Image();
+        preload.src = image.currentSrc || image.src;
     });
 });
 
