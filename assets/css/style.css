@@ -1080,9 +1080,10 @@ video {
 
 /* --- THE MAP BOX --- */
 .contact-map {
-    flex: 1;
+    flex: 1 1 520px;
     min-width: 320px;
-    height: 450px; /* Strong height for desktop */
+    height: 640px;
+    min-height: 640px;
     border-radius: 15px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1113,7 +1114,8 @@ video {
 
     .contact-map {
         width: 100%;
-        height: 520px; /* More comfortable height for mobile map browsing */
+        height: 680px;
+        min-height: 680px;
         margin-top: 20px;
         pointer-events: auto;
     }
@@ -1122,7 +1124,8 @@ video {
 @media (max-width: 520px) {
     .contact-map {
         min-width: 0;
-        height: 560px;
+        height: 720px;
+        min-height: 720px;
         border-radius: 12px;
     }
 }
@@ -1205,6 +1208,11 @@ video {
     text-decoration: none;
     transition: 0.3s;
     font-size: 0.95rem;
+}
+
+.footer-contact-info a {
+    color: inherit;
+    text-decoration: none;
 }
 
 .footer-col ul li a:hover {
