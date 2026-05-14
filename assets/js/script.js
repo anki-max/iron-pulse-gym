@@ -56,10 +56,6 @@ window.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    heroVideo.querySelectorAll('source[data-src]').forEach((source) => {
-        source.src = source.dataset.src;
-    });
-
     heroVideo.load();
     heroVideo.play().catch(() => {
         heroVideo.pause();

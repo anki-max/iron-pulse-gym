@@ -1276,6 +1276,13 @@ video {
     color: #ffffff;
 }
 
+.credit-heart {
+    color: var(--color-accent);
+    font-size: 0.78rem;
+    margin-left: 4px;
+    vertical-align: 1px;
+}
+
 .legal-main {
     padding: 130px 5% 90px;
     background: #050505;
