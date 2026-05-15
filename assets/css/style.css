@@ -164,6 +164,17 @@ video {
     overflow: hidden;
 }
 
+/* New Overlay Style */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust 0.5 (50%) to make it darker or lighter */
+    z-index: 0; /* Sits above the video but below the content */
+}
+
 .hero-video {
     position: absolute;
     inset: 0;
@@ -920,94 +931,173 @@ video {
 
 
 
-/* --- TESTIMONIALS SECTION --- */
+/* =========================================
+   TESTIMONIALS SECTION
+========================================= */
+
 .testimonials {
     padding: 100px 5%;
     background-color: #0a0a0a;
+
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* =========================================
+   GRID LAYOUT
+========================================= */
+
 .testimonial-grid {
+    width: 100%;
+    max-width: 1200px;
+
+    margin-top: 50px;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    max-width: 1200px;
-    width: 100%;
-    margin-top: 50px;
+}
+/* =========================================
+   TESTIMONIALS SECTION
+========================================= */
+.testimonials {
+    padding: 80px 5%;
+    background: #0a0a0a;
+    color: white;
 }
 
+.testimonial-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    color: #ffffff;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.highlight {
+    color: #ff3e3e;
+}
+
+.section-title p {
+    color: #9a9a9a;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+/* =========================================
+   GRID SYSTEM (3 COLUMNS DEFAULT)
+========================================= */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Force 3 columns */
+    gap: 30px;
+}
+
+/* =========================================
+   CARD & NO-CROP IMAGE LOGIC
+========================================= */
 .testimonial-card {
-    background: #111;
-    padding: 40px 30px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: 0.3s ease;
+    background: #111111;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-wrapper {
+    width: 100%;
+    /* maintains a consistent shape without cropping heads/feet */
+    aspect-ratio: 4 / 5; 
+    overflow: hidden;
+}
+
+.client-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures area is filled */
+    object-position: top center; /* Keeps faces visible in transformations */
+    display: block;
 }
 
 .testimonial-card:hover {
-    border-color: rgba(255, 62, 62, 0.3);
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    border-color: rgba(255, 62, 62, 0.4);
+}
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+.testimonial-content {
+    padding: 25px;
+    flex-grow: 1;
 }
 
 .stars {
+    display: flex;
+    gap: 4px;
     color: #ff3e3e;
-    font-size: 0.9rem;
-    margin-bottom: 20px;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
 }
 
 .review-text {
-    color: #cccccc;
-    font-size: 1rem;
+    color: #d0d0d0;
+    font-size: 0.95rem;
     line-height: 1.7;
-    font-style: italic;
-    margin-bottom: 30px;
-}
-
-/* --- THE INITIALS CIRCLE --- */
-.client-info {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.initials-circle {
-    width: 50px;
-    height: 50px;
-    background-color: #26278d; /* Theme Red */
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    flex-shrink: 0; /* Prevents circle from squeezing */
-    text-transform: uppercase;
-    border:1px solid white;
+    margin-bottom: 20px;
 }
 
 .client-detail h4 {
-    color: #fff;
-    font-size: 1.1rem;
-    margin-bottom: 2px;
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 4px;
 }
 
 .client-detail span {
-    color: #777;
-    font-size: 0.85rem;
+    color: rgb(247, 162, 162);
+    font-size: 1rem;
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 1000px) {
+/* =========================================
+   RESPONSIVE LOGIC (SNAP FROM 3 TO 1)
+========================================= */
+
+/* Desktop & Large Tablets: 3 Columns */
+@media (min-width: 993px) {
     .testimonial-grid {
-        grid-template-columns: 1fr;
-        max-width: 500px;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
+/* Small Tablets & Mobile: 1 Column (No 2-column middle ground) */
+@media (max-width: 992px) {
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px; /* Prevents card from being too wide on tablets */
+        margin: 0 auto;
+    }
+
+    .image-wrapper {
+        aspect-ratio: 16 / 9; /* Wider images look better when stacked vertically */
+    }
+
+    .testimonials {
+        padding: 60px 20px;
+    }
+}
 
 /* --- CONTACT SECTION --- */
 .contact-section {
